@@ -1,0 +1,111 @@
+@mixin phone-screen {
+    @media (max-width: 576px) {
+      @content;
+    }
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .flex-column-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-div {
+    min-height: 100vh;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); */
+      /* url("https://unsplash.com/photos/jbywvpa9vH8/download?force=true&w=1920"); */
+      background-image:url('/assets/images/istockphoto-1333672277-170667a.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+  }
+    .login-comps {
+      /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+      background:url('/src/assets/images/istockphoto-1333672277-170667a.jpg') ;
+      padding: 2em;
+      color: white;
+    }
+  
+    form {
+      padding: 20px 0;
+      position: relative;
+      z-index: 2;
+      background:url('/src/assets/images/istockphoto-1333672277-170667a.jpg') }
+
+    .inputuserandpassword {
+        margin: 0.5rem auto;
+        background: rgba(80, 227, 112, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 0.5em;
+        width: 400px;
+        outline: none;
+      }
+  
+      .inputuserandpassword:focus {
+        background-color: rgba(255, 255, 255, 0.329);
+        color: rgb(145, 127, 127);
+      }
+  
+      
+  
+      .loginbutton:active {
+        transform: scale(0.95);
+      }
+  
+      .inputuserandpassword::placeholder {
+        color: white;
+      }
+    /* } */
+  
+    .text-center {
+      text-align: center;
+      color: #000;
+    }
+  
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  
+    @include phone-screen() {
+      padding: 2rem 1.5rem !important;
+  
+      .login-comps,
+      .inputuserandpassword {
+        width: 100% !important;
+      }
+    }
+  /* } */
+
+
+  .loginbutton {
+    background: black;
+    color: white;
+    border-radius: 5px;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 500px;
+    border: none;
+  }
+  .loginbutton:hover {
+    background: rgb(247, 239, 239);
+    color: rgb(58, 53, 53);
+    border-radius: 5px;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 500px;
+    border: none;
+  }
+  

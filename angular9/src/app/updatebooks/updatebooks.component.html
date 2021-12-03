@@ -1,0 +1,52 @@
+<div class='card'>
+    <form (ngSubmit)="updatebooks()" class='bg-pic'>
+<div class='card-header'>
+ Edit books
+</div>
+<div class='card-body'>            
+  
+    <div class='table-responsive'>
+    <table class='table'>       
+    
+      <tbody>  
+        <tr>
+            <td> <label>books Id</label></td>
+    <td>
+        <input type="text" placeholder="id" name="b_id"  [(ngModel)]="books.booksId"/>
+    
+    </td>                  
+          </tr>  
+          
+          
+          <tr>
+              <td><label>title</label></td>
+              <td><input type="text" placeholder="title" name="b_title" [(ngModel)]="books.title"/></td>                  
+            </tr>  
+            <tr>
+              <td><label>author</label></td>
+              <td><input type="text" placeholder="author" name="b_author" [(ngModel)]="books.author"/></td>                  
+            </tr>  
+            <tr>
+              <td><label>genre</label></td>
+              <td><input type="text" placeholder="genre" name="b_genre" [(ngModel)]="books.genre"/></td>                  
+            </tr>  
+            <tr>
+              <td><label>imageUrl</label></td>
+              <td><input type="text" placeholder="imageurl" name="b_image" [(ngModel)]="books.imageUrl"/></td>                  
+            </tr>  
+            
+            
+           
+
+
+            <tr> 
+              <td></td>
+              <td><input type="submit" value="Submit" /></td>                  
+            </tr>             
+    </tbody>
+    </table>
+  </div>
+</div>
+</form>
+</div>
+

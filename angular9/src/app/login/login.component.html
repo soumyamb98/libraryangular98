@@ -1,0 +1,23 @@
+<div class="login-div flex-column-centered">
+    <div class="login-comps">
+      <h1 class="text-center">Login</h1> <br>
+
+
+      <!-- <form (ngSubmit)="loginuser()" class="flex-column-centered">
+      <form (ngSubmit)="loginuser()" class="flex-column-centered"> -->
+      <form class="flex-column-centered" [formGroup]="loginForm">
+        <input type="text" class="inputuserandpassword" formControlName="email" id="user" placeholder="Username"  required> <br>
+        <input type="password" name="password" class="inputuserandpassword"  id="password" placeholder="Password" formControlName="password" required> <br>
+        <input (click)="login()" type="submit" value="Login" class="loginbutton"> <br>
+      </form>
+     
+        <div>
+          <div style="width: 290px; padding: 20px;">
+              <button class="form-btn-hollow" (click)="movetoregister()"><p >Forgot Password?</p>Register</button>
+          </div>
+      </div>
+        <p >Forgot Password?</p>
+      
+    </div>
+  </div>  
+       

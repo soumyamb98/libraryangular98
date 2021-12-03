@@ -1,0 +1,42 @@
+<div class='card'>
+    <form (ngSubmit)="addauthors()" class='bg-pic'>
+<div class='card-header'>
+ ADD PRODUCT
+</div>
+<div class='card-body'>            
+  <div class='table-responsive'>
+    <table class='table'>       
+    
+      <tbody>  
+          <tr>
+              <td> <label>authors Id</label></td>
+              <td><input type="text" placeholder="id" name="a_id" [(ngModel)]="authors.authorsId"/></td>                  
+            </tr>   
+            <tr>
+                <td><label>name</label></td>
+                <td><input type="text" placeholder="name" name="a_title" [(ngModel)]="authors.title"/></td>                  
+              </tr>  
+              <tr>
+                <td><label>born</label></td>
+                <td><input type="text" placeholder="born details" name="a_author" [(ngModel)]="authors.author"/></td>                  
+              </tr>  
+              <tr>
+                <td><label>details</label></td>
+                <td><input type="text" placeholder="details" name="a_genre" [(ngModel)]="authors.genre"/></td>                  
+              </tr>  
+              <tr>
+                <td><label>imageUrl</label></td>
+                <td><input type="text" placeholder="imageurl" name="a_image" [(ngModel)]="authors.imageUrl"/></td>                  
+              </tr>  
+              
+              <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>                  
+              </tr>             
+      </tbody>
+    </table>
+  </div>
+</div>
+</form>
+</div>
+
