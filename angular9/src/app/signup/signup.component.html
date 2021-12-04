@@ -20,6 +20,13 @@
    
     <!-- <span *ngIf="isValid('password')">Password is a mandatory field</span> -->
   </div>
+  <div class="row">
+    <label for="password">confirm Password</label>
+    <input type="password" name="cnfpass" formControlName="cnfpass" placeholder="password" required>
+
+   
+    <!-- <span *ngIf="isValid('cnfpass')">Password and confirm password should match</span> -->
+  </div>
   <input type="submit" (click)="register()" value="signup" class="button">
   <!-- <button type="submit">signup</button> -->
   <div style="text-align: center;">                

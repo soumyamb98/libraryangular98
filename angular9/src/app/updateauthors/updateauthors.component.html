@@ -1,51 +1,42 @@
 <div class='card'>
-    <form (ngSubmit)="updateauthors()" class='bg-pic'>
+  <form (ngSubmit)="updateauthors()" class='bg-pic'>
 <div class='card-header'>
- Edit books
+UPDATE PRODUCT
 </div>
 <div class='card-body'>            
+<div class='table-responsive'>
+  <table class='table'>       
   
-    <div class='table-responsive'>
-    <table class='table'>       
-    
-      <tbody>  
+    <tbody>  
         <tr>
-            <td> <label>books Id</label></td>
-    <td>
-        <input type="text" placeholder="id" name="a_id"  [(ngModel)]="authors.authorsId"/>
-    
-    </td>                  
-          </tr>  
-          
-          
+            <td> <label>authors Id</label></td>
+            <!-- <td><input type="text" placeholder="id" name="a_id" [(ngModel)]="authors.authorsId"/></td>                   -->
+          </tr>   
           <tr>
-              <td><label>title</label></td>
-              <td><input type="text" placeholder="title" name="a_title" [(ngModel)]="authors.title"/></td>                  
+              <td><label>name</label></td>
+              <td><input type="text" placeholder="name" name="a_title" [(ngModel)]="authors.title"/></td>                  
             </tr>  
             <tr>
-              <td><label>author</label></td>
-              <td><input type="text" placeholder="author" name="a_author" [(ngModel)]="authors.author"/></td>                  
+              <td><label>born</label></td>
+              <td><input type="text" placeholder="born details" name="a_author" [(ngModel)]="authors.author"/></td>                  
             </tr>  
             <tr>
-              <td><label>genre</label></td>
-              <td><input type="text" placeholder="genre" name="a_genre" [(ngModel)]="authors.genre"/></td>                  
+              <td><label>details</label></td>
+              <td><input type="text" placeholder="details" name="a_genre" [(ngModel)]="authors.genre"/></td>                  
             </tr>  
             <tr>
               <td><label>imageUrl</label></td>
               <td><input type="text" placeholder="imageurl" name="a_image" [(ngModel)]="authors.imageUrl"/></td>                  
             </tr>  
             
-            
-           
-
-
-            <tr> 
+            <tr>
               <td></td>
               <td><input type="submit" value="Submit" /></td>                  
             </tr>             
     </tbody>
-    </table>
-  </div>
+  </table>
+</div>
 </div>
 </form>
 </div>
+

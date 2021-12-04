@@ -113,33 +113,25 @@ app.put('/books/update',  (req,res)=>{
     console.log(req.body)
     id=req.body._id,
     title=req.body.title,
-        author=req.body.author,
-        genre=req.body.genre,
-        // image=req.file.filename,
-        
-        imageURL=req.body.imageUrl
+    author=req.body.author,
+    genre=req.body.genre,
+    imageUrl=req.body.imageUrl
 
     
-    booksdata.findByIdAndUpdate({ "_id": id },
-        {
-            $set: {
-                "title": title,
-                "author": author,
-                "genre": genre,
-                // "image": image,
-                                
-                "imageUrl": imageUrl
-            }
-        })
-        .then(function () {
-            res.send();
-        });
- })
+    booksdata.findByIdAndUpdate({_id:id},
+        {$set:{"title":title,
+        "author":author,
+        "genre":genre,
+        "imageUrl":imageUrl}})
+    .then(function(){
+    res.send();
+    })
+})
  // books delete
-app.delete('/books/remove/:id',(req,res)=>{
+app.delete('/books/remove/:id', (req,res)=>{
  
    id = req.params.id;
-   booksdata.findByIdAndDelete({"_id":id})
+   booksdata.findByIdAndDelete({_id:id})
    .then(()=>{
        console.log('success')
        res.send();
@@ -156,13 +148,22 @@ app.get('/authors', (req, res) => {
             res.send(authors);
         })
 });
-// app.get('/products',function(req,res){
-     
-//      ProductData.find()
-//                  .then(function(products){
-//                      res.send(products);
-//                  });
-//  });
+app.get('/authors/:id',function(req,res){
+    id = req.params.id;
+
+     authordata.findOne({_id:id})
+                 .then(function(author){
+                     res.send(author);
+                 });
+ });
+app.get('/books/:id',function(req,res){
+    id = req.params.id;
+
+     booksdata.findOne({_id:id})
+                 .then(function(book){
+                     res.send(book);
+                 });
+ });
 //authors post
 // app.post('/authors/insert', verifyToken, imageupload.single('image'), (req, res) => {
 app.post('/authors/insert',(req, res) => {
@@ -191,17 +192,14 @@ app.put('/authors/update',  (req,res)=>{
     title=req.body.title,
         author=req.body.author,
         genre=req.body.genre,
-        // image=req.file.filename,
-        
         imageUrl=req.body.imageUrl
 
     
-        authordata.findByIdAndUpdate({"_id":id},
+        authordata.findByIdAndUpdate({_id:id},
                                 {$set:{"title":title,
                                 "author":author,
                                 "genre":genre,
-                                "image":image,
-                                
+                    
                                 "imageUrl":imageUrl}})
    .then(function(){
        res.send();
@@ -211,7 +209,7 @@ app.put('/authors/update',  (req,res)=>{
 app.delete('/authors/remove/:id',(req,res)=>{
  
    id = req.params.id;
-   authordata.findByIdAndDelete({"_id":id})
+   authordata.findByIdAndDelete({_id:id})
    .then(()=>{
        console.log('success')
        res.send();

@@ -73,9 +73,11 @@ export class BooksComponent implements OnInit {
   // }
 
   updatebooks(book:any)
-  {
+  { 
     localStorage.setItem("editbookId", book._id.toString());
-    this.router.navigate(['addbooks']);
+    var x = localStorage.getItem("editbookId")
+    console.log(x)
+    this.router.navigate(['updatebooks']);
 
   }
   deletebooks(book: any) {

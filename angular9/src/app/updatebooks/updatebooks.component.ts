@@ -22,13 +22,15 @@ export class UpdatebooksComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let booksId = localStorage.getItem("editbooksId");
+    let booksId = localStorage.getItem("editbookId")
+   
     this.booksservice.getbook(booksId).subscribe((data)=>{
       this.books=JSON.parse(JSON.stringify(data));
   })
   }
   updatebooks()
   {    
+    console.log(this.books);
     this.booksservice.updatebooks(this.books);   
     alert("Success");
     this.router.navigate(['books']);

@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 
 const schema = mongoose.Schema;
 const bookSchema = new schema({
-    booksId: String,
+    // booksId: String,
     title: String,
     author: String,
     genre: String,
-    image: String,
+    // image: String,
     imageUrl: String
 });
 

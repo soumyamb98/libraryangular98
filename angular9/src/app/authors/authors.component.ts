@@ -28,10 +28,17 @@ export class AuthorsComponent implements OnInit {
       this.authors=JSON.parse(JSON.stringify(data));
   })
   }
+
+  
   editauthor(author:any)
   {
+    // console.log(author._id)
+    // localStorage.setItem("editauthorId", author._id.toString());
+    
     localStorage.setItem("editauthorId", author._id.toString());
-    this.router.navigate(['addauthors']);
+    var x = localStorage.getItem('editauthorId')
+    console.log(x);
+    this.router.navigate(['updateauthors']);
 
   }
   deleteauthor(author:any)

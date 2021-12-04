@@ -21,8 +21,10 @@ export class AuthorservicaService {
   constructor(private http: HttpClient) { }
 
 
-  getauthor(id:any){
-    return this.http.get("http://localhost:5000/authors" + id);
+  getauthor(id: any) {
+    
+    console.log(id);
+    return this.http.get("http://localhost:5000/authors/" + id);
   }
   getauthors(){
     return this.http.get("http://localhost:5000/authors")
@@ -38,10 +40,12 @@ export class AuthorservicaService {
   }
 
 
-  updateauthors(author:any){
+  updateauthors(author: any) {
+    console.log(author); 
     console.log('authors update')
     return this.http.put("http://localhost:5000/authors/update", author)
-    .subscribe(data =>{console.log(data)})
+      .subscribe(data => { console.log(data) })
+    
   }
 
 

@@ -27,7 +27,7 @@ import { AuthorservicaService } from './authorservica.service';
 
 
 import { MrouteguardGuard } from './mrouteguard.guard';
-import { TokenInterceptorService } from './token-interceptor.service';
+// import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -53,11 +53,13 @@ import { TokenInterceptorService } from './token-interceptor.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [AuthoriseService, MrouteguardGuard, BooksserviveService, AuthorservicaService, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
+  providers: [AuthoriseService, MrouteguardGuard, BooksserviveService, AuthorservicaService,
+    // {
+    // provide: HTTP_INTERCEPTORS,
+    // useClass: TokenInterceptorService,
+    // multi: true
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

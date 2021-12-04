@@ -41,7 +41,7 @@ export class BooksserviveService {
     // }))
   }
   getbook(id: any) {
-    return this.httpdata.get("http://localhost:5000/books" + id);
+    return this.httpdata.get("http://localhost:5000/books/" + id);
     // return this.httpdata.get("http://localhost:5000/"+id);
     // return this.httpdata.get<any>("http://localhost:5000/books").pipe(map((res: any) => {
     //   return res;
@@ -54,7 +54,7 @@ export class BooksserviveService {
   // }))
   // }
   updatebooks(book: any) {
-    console.log('books update')
+    console.log(book)
     return this.httpdata.put("http://localhost:5000/books/update", book)
     .subscribe(data =>{console.log(data)})
   //   return this.httpdata.put<any>("http://localhost:5000/books/update"+ id, books).pipe(map((res: any) => {

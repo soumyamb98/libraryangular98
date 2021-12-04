@@ -9,25 +9,26 @@ import { Router } from '@angular/router';
 })
 export class UpdateauthorsComponent implements OnInit {
   authors= {
-    authorsId:'',
+    // authorsId:'',
     title: '',
         author:'',
         genre: '',
         // image: [''],
-        // imageUrl: ['']
     imageUrl: ''
-  
   }
   constructor(private router:Router, private authorsservice:AuthorservicaService) { }
 
   ngOnInit(): void {
-    let authorsId = localStorage.getItem("editauthorsId");
+    let authorsId = localStorage.getItem('editauthorId')
+    console.log(authorsId)
     this.authorsservice.getauthor(authorsId).subscribe((data)=>{
       this.authors=JSON.parse(JSON.stringify(data));
+      console.log(this.authors)
   })
   }
   updateauthors()
-  {    
+  {   
+    
     this.authorsservice.updateauthors(this.authors);   
     alert("Success");
     this.router.navigate(['authors']);

@@ -21,7 +21,10 @@ export class SignupComponent implements OnInit {
     this.myform = new FormGroup({
       email: new FormControl(null, Validators.email),
       username: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required),});
+      password: new FormControl(null, Validators.required),
+      
+      cnfpass: new FormControl(null, this.passValidator)
+    });
     // this.myform.controls.password.valueChanges
     //   .subscribe(
     //     x => this.myform.controls.cnfpass.updateValueAndValidity());
@@ -36,7 +39,7 @@ export class SignupComponent implements OnInit {
 
   passValidator(control: AbstractControl) {
     if (control && (control.value !== null || control.value !== undefined)) {
-      // const cnfpassValue = control.value;
+      const cnfpassValue = control.value;
       
       const passControl = control.root.get('password');
       if (passControl) { const passValue = passControl.value;
