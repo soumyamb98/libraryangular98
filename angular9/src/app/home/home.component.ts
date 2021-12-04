@@ -20,11 +20,11 @@ export class HomeComponent implements OnInit {
   constructor(private myService:AuthoriseService,
     private _router: Router) {
     
-      this.myService.getUserName()
-      .subscribe(
-        data => this.username= data.toString(),
-        error => this._router.navigate(['/'])
-      )
+      // this.myService.getUserName()
+      // .subscribe(
+      //   data => this.username= data.toString(),
+      //   Error => this._router.navigate(['/'])
+      // )
     }
 
   ngOnInit(): void {}

@@ -26,7 +26,7 @@ export class BooksserviveService {
   constructor(private httpdata: HttpClient) { }
   
   postbooks(item: any) {
-    console.log{"postbooks()"}
+    console.log("postbooks()")
     return this.httpdata.post("http://localhost:5000/books/insert",{item})
     .subscribe(data =>{console.log(data)})
     // return this.httpdata.post<any>("http://localhost:5000/books/insert", item).pipe(map((res: any) => {

@@ -30,9 +30,9 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  isValid(controlName:any) {
-    return this.myform.get(controlName).invalid && this.myform.get(controlName).touched;
-  }
+  // isValid(controlName:any) {
+  //   return this.myform.get(controlName).invalid && this.myform.get(controlName).touched;
+  // }
 
   passValidator(control: AbstractControl) {
     if (control && (control.value !== null || control.value !== undefined)) {

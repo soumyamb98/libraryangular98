@@ -9,27 +9,30 @@ import { Router } from '@angular/router'
 
 
 export class AuthoriseService {
+  getUserName() {
+    throw new Error('Method not implemented.');
+  }
   private loginurl = 'http://localhost/5000/'
   
   constructor(private http:HttpClient) { }
   submitRegister(body:any){
-    return this.http.post('http://localhost:5000/users/register', body,{
+    return this.http.post('http://localhost:5000/signup', body,{
       observe:'body'
     });
   }
 
   login(body:any){
-    return this.http.post('http://localhost:5000/users/login', body,{
+    return this.http.post('http://localhost:5000/login', body,{
       observe:'body'
     });
   }
 
-  getUserName() {
-    return this.http.get('http://localhost:5000/users/username', {
-      observe: 'body',
-      params: new HttpParams().append('token', localStorage.getItem('token'))
-    });
-  }
+  // getUserName() {
+  //   return this.http.get('http://localhost:5000/users/username', {
+  //     observe: 'body',
+  //     params: new HttpParams().append('token', localStorage.getItem('token'))
+  //   });
+  // }
 
 
 
@@ -44,5 +47,5 @@ export class AuthoriseService {
 //   getToken()
 //   {
 //     return localStorage.getItem('token')
-//   }
+  }
 }

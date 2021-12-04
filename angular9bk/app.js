@@ -22,14 +22,14 @@ app.use(express.urlencoded({ extended: true }));
 
 
 var createError = require('http-errors');
-var express = require('express');
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var mongoose = require('mongoose');
+
 const mongoose = require('mongoose');
 mongoose.connect(' mongodb+srv://library:qVadZjAJxCR5mIs5@liba.xmpac.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true }).then(() => console.log('mongo connected')).catch(err => console.log(err));// username='admin';
 //  password='1234';
