@@ -73,7 +73,7 @@
    <div class="container-fluid"> 
     <div *ngFor='let i of books' class="row">
         <div class="col-md-2 col-sm-3 text-center mt-5">
-            <img src="/assets/images/istockphoto-1333672277-170667a.jpg" class="img-fluid" alt="..." width="180px">
+            <img [src]="i.imageUrl" class="img-fluid" alt="..." width="180px">
              <h3>title{{i.title}}</h3>
             <div class="row">
                 <div class="col-xs-9">
@@ -97,8 +97,10 @@
                     <h4><span class="label label-default">{{i.imageUrl}}</span>
                     </h4>
                 </div>
-                <button class="btn btn-info" *ngIf="auth.loggedIn()" (click)="updatebooks(books)">edit</button>
-                <button class="btn btn-danger" *ngIf="auth.loggedIn()" (click)="deletebooks(books)">delete</button>
+                <button class="btn btn-info"  (click)="updatebooks(books)">edit</button>
+                <!-- <button class="btn btn-info" *ngIf="auth.loggedIn()" (click)="updatebooks(books)">edit</button> -->
+                <button class="btn btn-danger" (click)="deletebooks(books)">delete</button>
+                <!-- <button class="btn btn-danger" *ngIf="auth.loggedIn()" (click)="deletebooks(books)">delete</button> -->
             </div>
         </div>
         
@@ -106,6 +108,35 @@
   </div> 
 
 
+
+
+
+
+
+
+  <div class="row" *ngFor='let i of books'>    
+    <br>
+    <div class="col-md-2 col-sm-3 text-center">
+      <a class="story-title" href="#"><img alt="" [src]="i.imageUrl" style="width:100px;height:100px" class="img-circle"></a>
+    </div>
+    <div class="col-md-10 col-sm-9">
+      <h3>{{i.title}}</h3>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4><span class="label label-default">{{i.author}}</span></h4><h4>
+          <small style="font-family:courier,'new courier';" class="text-muted">{{i.genre}} <br> • <a href="" class="text-muted">Read More</a></small>
+          </h4></div>
+        <div class="col-xs-3"></div>
+      </div>
+      <br><br>
+      <button class="btn btn-info"  (click)="updatebooks(books)">edit</button>
+      <!-- <button class="btn btn-info" *ngIf="auth.loggedIn()" (click)="updatebooks(books)">edit</button> -->
+      <button class="btn btn-danger" (click)="deletebooks(books)">delete</button>
+      <!-- <button class="btn btn-danger" *ngIf="auth.loggedIn()" (click)="deletebooks(books)">delete</button> -->
+    </div>
+  </div>
+ 
+  <hr>
 
 
 

@@ -7,7 +7,8 @@ const authorSchema = new schema({
     title: String,
     author: String,
     genre: String,
-    image: String
+    image: String,
+    imageUrl: String
 });
 
 

@@ -90,7 +90,7 @@ app.get('/books', (req, res) => {
         })
 });
 // books post
-app.post('/books/insert', verifyToken, imageupload.single('image'), (req, res) => {
+app.post('/books/insert',(req, res) => {
     
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST, PUT,DELETE,PATCH,OPTIONS")
@@ -101,7 +101,7 @@ app.post('/books/insert', verifyToken, imageupload.single('image'), (req, res) =
         genre: req.body.item.genre,
         // image: req.file.item.filename,
         
-        imageURL: req.body.item.imageURL
+        imageUrl: req.body.item.imageUrl
     }
     var bookssave = new booksdata(product);
     bookssave.save();
@@ -109,7 +109,7 @@ app.post('/books/insert', verifyToken, imageupload.single('image'), (req, res) =
 });
 //books update
 // app.put('/books/update', verifyToken, imageupload.single('image'), (req,res)=>{
-app.put('/books/update', verifyToken, (req,res)=>{
+app.put('/books/update',  (req,res)=>{
     console.log(req.body)
     id=req.body._id,
     title=req.body.title,
@@ -165,7 +165,7 @@ app.get('/authors', (req, res) => {
 //  });
 //authors post
 // app.post('/authors/insert', verifyToken, imageupload.single('image'), (req, res) => {
-app.post('/authors/insert', verifyToken,(req, res) => {
+app.post('/authors/insert',(req, res) => {
     
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods: GET,POST, PUT,DELETE,PATCH,OPTIONS")
@@ -185,7 +185,7 @@ app.post('/authors/insert', verifyToken,(req, res) => {
 
 //authors put
 // app.put('/authors/update', verifyToken, imageupload.single('image'), (req,res)=>{
-app.put('/authors/update', verifyToken, (req,res)=>{
+app.put('/authors/update',  (req,res)=>{
     console.log(req.body)
     id=req.body._id,
     title=req.body.title,
@@ -193,7 +193,7 @@ app.put('/authors/update', verifyToken, (req,res)=>{
         genre=req.body.genre,
         // image=req.file.filename,
         
-        imageURL=req.body.imageURL
+        imageUrl=req.body.imageUrl
 
     
         authordata.findByIdAndUpdate({"_id":id},
@@ -253,6 +253,6 @@ app.delete('/authors/remove/:id',(req,res)=>{
  
  
 
-app.listen(8000, () => {
+app.listen(5000, () => {
     console.log('app listening at 5000')
 })

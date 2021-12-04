@@ -17,7 +17,8 @@
     <label for="password">Password</label>
     <input type="password" name="password" formControlName="password" placeholder="password" required>
 
-    <span *ngIf="isValid('password')">Password is a mandatory field</span>
+   
+    <!-- <span *ngIf="isValid('password')">Password is a mandatory field</span> -->
   </div>
   <input type="submit" (click)="register()" value="signup" class="button">
   <!-- <button type="submit">signup</button> -->
